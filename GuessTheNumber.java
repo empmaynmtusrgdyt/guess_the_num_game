@@ -19,7 +19,7 @@ public class GuessTheNumber {
             System.out.println("You’ve decided to pick the number. Okay, enter your number from 1 to 100:");
             int user_number = input.nextInt();
         }
-        else if (choose_a_mode == 2){
+        if (choose_a_mode == 2){
             System.out.println("You’ve decided to guess the number. Enter your guess:");
             Random r = new Random();
             int computer_number = r.nextInt(101);
