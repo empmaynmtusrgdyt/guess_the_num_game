@@ -18,6 +18,28 @@ public class GuessTheNumber {
         if (choose_a_mode == 1){
             System.out.println("You’ve decided to pick the number. Okay, enter your number from 1 to 100:");
             int user_number = input.nextInt();
+            int one = 1;
+            int hun = 100;
+            int computer_number;
+            while (true){
+                computer_number = one + (hun - one) / 2;
+                System.out.println("Your number is " + computer_number + " ?");
+                System.out.println("If your number is larger than " + computer_number + ", then print >; " +
+                        "if your number is smaller than " + computer_number + ", print <; " +
+                        "if I have guessed your number correctly, print =.");
+                String MLE = input.next();
+                if (MLE.equals("=")){
+                    System.out.println("I guessed your number! It was " + computer_number);
+                    break;
+                } else if (MLE.equals(">")) {
+                    one = computer_number + 1;
+                } else if (MLE.equals("<")) {
+                    hun = computer_number - 1;
+                }
+                else {
+                    System.out.println("Incorrect input. Please enter either <, > or =");
+                }
+            }
         }
         if (choose_a_mode == 2){
             System.out.println("You’ve decided to guess the number. Enter your guess:");
